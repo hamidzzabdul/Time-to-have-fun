@@ -10,6 +10,7 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
+  overflow: scroll;
 }
 html {
   font-family: "Lexend", sans-serif;
@@ -17,8 +18,8 @@ html {
 
 .navigation {
   position: sticky;
-  top: 0;
   width: 100%;
+  top: 0;
   background-color: #38b2ac;
   height: 70px;
   display: flex;
@@ -26,6 +27,14 @@ html {
   align-items: center;
   padding: 2rem;
   z-index: 1;
+}
+
+@media (max-width: 457px){
+  .navigation{
+    flex-direction: column;
+    height: 100%;
+    padding: 1rem;
+  }
 }
 
 .nav-items {
@@ -95,7 +104,14 @@ html {
 .filter-wrapper {
   display: flex;
   gap: 5rem;
-  /* border: 1px solid red; */
+}
+@media (max-width: 475px) {
+  .filter-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    border: 1px solid red;
+  }
 }
 @media (max-width: 904px) {
   .filters {
@@ -301,10 +317,10 @@ li > span {
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
   }
-  .place-container > img{
+  .place-container > img {
     height: 70%;
   }
-  .place-text-wrapper{
+  .place-text-wrapper {
     height: 20%;
   }
 }
@@ -322,4 +338,91 @@ li > span {
 }
 .places-tags > li > span {
   font-size: 0.785rem;
+}
+
+/* modal */
+.overlay {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.overlay.active {
+  display:block;
+}
+
+.login-modal {
+  display: none;
+  width: 350px;
+  height: 270px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background-color: #ffff;
+  padding: 1.5rem 1rem;
+  flex-direction: column;
+  gap: 1.3rem;
+  border-radius: 5px;
+}
+
+.login-modal > label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.login-modal > label > span {
+  color: #000;
+  font-weight: 500;
+}
+
+.login-modal > label > input {
+  height: 35px;
+  padding: 0.5rem;
+  border: none;
+  border: 1px solid #69697480;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.login-modal > label > input:focus {
+  outline: 2px solid #38b2ac;
+}
+
+.login-modal > .close {
+  display: flex;
+  justify-content: end;
+  cursor: pointer;
+  transition: 100ms ease all;
+}
+.login-modal > .close:hover {
+  color: #696974;
+}
+
+.login {
+  width: 100px;
+  padding: .8rem;
+  border: none;
+  background-color: #38b2ac;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.1rem;
+}
+
+.login-modal.active {
+  display: flex;
+}
+
+@media (max-width: 455px){
+  .login-modal{
+    width: 70%;
+  }
 }
