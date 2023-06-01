@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Time to have fun</title>
+</head>
+
+<body>
+    <section class="navigation">
+        <div class="nav-items">
+            <svg class="fill-current h-8 w-8 mr-2" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                width="512px" height="512px" viewBox="0 0 512 512">
+                <path fill="#ffff"
+                    d="M445.355,67.036l-0.391-0.392c-19.986-19.006-59.898,14.749-59.898,14.749l-72.463,57.049l-76.285-13.52 c11.005-15.953,14.32-31.79,6.983-39.127c-9.503-9.503-33.263-1.15-53.068,18.655c-3.464,3.464-6.568,7.049-9.297,10.657 l-58.574-10.381L83.346,137.97l159.044,72.979L140.427,334.152l-63.505-11.906l-16.083,16.06L173.696,451.16l16.058-16.082 l-11.906-63.506l123.204-101.963l72.979,159.043l33.244-39.016l-10.381-58.574c3.609-2.729,7.193-5.832,10.658-9.297 c19.805-19.805,28.158-43.564,18.656-53.066c-7.339-7.338-23.177-4.022-39.13,6.982l-13.52-76.284l57.049-72.464 C430.607,126.934,464.363,87.021,445.355,67.036z">
+                </path>
+            </svg>
+            <p class="title">Time to Have More fun</p>
+        </div>
+        <button class="add-place"><a href="#">Add Place</a></button>
+    </section>
+
+    <section class="filters">
+        <div class="filtered-items">
+            <h2 class="title">This Year we are going to...</h1>
+                <div class="filter-wrapper">
+                    <div class="items">
+                        <p class="category">type</p>
+                        <div class="item-filters">
+                            <label for="adventure">
+                                <input type="radio" name="adventure" value="adventure">
+                                <span>adventure</span>
+                            </label>
+                        </div>
+                        <div class="item-filters">
+                            <label for="beach">
+                                <input type="radio" name="beach" value="beach">
+                                <span>beach</span>
+                            </label>
+                        </div>
+                        <div class="item-filters">
+                            <label for="City">
+                                <input type="radio" name="city" value="city">
+                                <span>City</span>
+                            </label>
+                        </div>
+                        <div class="item-filters">
+                            <label for="Ski">
+                                <input type="radio" name="ski" value="ski">
+                                <span>Ski</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="items">
+                        <p class="category">Temperature</p>
+                        <div class="item-filters">
+                            <label for="Hot">
+                                <input type="radio" name="hot" value="hot">
+                                <span>Hot</span>
+                            </label>
+                        </div>
+                        <div class="item-filters">
+                            <label for="cold">
+                                <input type="radio" name="cold" value="cold">
+                                <span>Cold</span>
+                            </label>
+                        </div>
+                        <div class="item-filters">
+                            <label for="temperate">
+                                <input type="radio" name="temperate" value="temperate">
+                                <span>temperate</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="items">
+                        <p class="category">type</p>
+                        <div class="item-filters">
+                            <label for="long">
+                                <input type="radio" name="long" value="long">
+                                <span>long</span>
+                            </label>
+                        </div>
+                        <div class="item-filters">
+                            <label for="medium">
+                                <input type="radio" name="medium" value="medium">
+                                <span>medium</span>
+                            </label>
+                        </div>
+                        <div class="item-filters">
+                            <label for="short">
+                                <input type="radio" name="short" value="short">
+                                <span>short</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <button class="tell-me">Tell me already</button>
+        </div>
+
+        <div class="filtered-place">
+            <img src="https://images.unsplash.com/photo-1571893544028-06b07af6dade?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&h=350&q=80"
+                alt="">
+            <div class="text-wrapper">
+                <h2 class="title">Rio de Janeiro, Brazil</h2>
+                <p class="description">Aruba is a small Caribbean island located off the coast of Venezuela, known for
+                    its
+                    stunning white sandy beaches, crystal-clear turquoise waters, and vibrant coral reefs.</p>
+                <ul class="tags">
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                            class="inline-block w-4 mr-1 fill-current">
+                            <path class="heroicon-ui" fill="#6D6B6E"
+                                d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                            </path>
+                        </svg>
+                        <span>Medium Flight</span>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                            class="inline-block w-4 mr-1 fill-current">
+                            <path class="heroicon-ui" fill="#6D6B6E"
+                                d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                            </path>
+                        </svg>
+                        <span>Hot</span>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                            class="inline-block w-4 mr-1 fill-current">
+                            <path class="heroicon-ui" fill="#6D6B6E"
+                                d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                            </path>
+                        </svg>
+                        <span>Beach</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="places">
+        <h1 class="title">Places we want to go</h1>
+        <div class="i-want-to-go">
+            <div class="place-container">
+                <img src="https://images.unsplash.com/photo-1558117338-7ef3d637ce2f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&h=350&q=80"
+                    alt="Aruba">
+                <div class="place-text-wrapper">
+                    <h2 class="title">Aruba</h2>
+                    <ul class="places-tags">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                class="inline-block w-4 mr-1 fill-current">
+                                <path class="heroicon-ui" fill="#6D6B6E"
+                                    d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                                </path>
+                            </svg>
+                            <span>Medium Flight</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                class="inline-block w-4 mr-1 fill-current">
+                                <path class="heroicon-ui" fill="#6D6B6E"
+                                    d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                                </path>
+                            </svg>
+                            <span>Hot</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                class="inline-block w-4 mr-1 fill-current">
+                                <path class="heroicon-ui" fill="#6D6B6E"
+                                    d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                                </path>
+                            </svg>
+                            <span>Beach</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="place-container">
+                <img src="https://images.unsplash.com/photo-1558117338-7ef3d637ce2f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&h=350&q=80"
+                    alt="Aruba">
+                <div class="place-text-wrapper">
+                    <h2 class="title">Paris</h2>
+                    <ul class="places-tags">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                class="inline-block w-4 mr-1 fill-current">
+                                <path class="heroicon-ui" fill="#6D6B6E"
+                                    d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                                </path>
+                            </svg>
+                            <span>Medium Flight</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                class="inline-block w-4 mr-1 fill-current">
+                                <path class="heroicon-ui" fill="#6D6B6E"
+                                    d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                                </path>
+                            </svg>
+                            <span>Hot</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                class="inline-block w-4 mr-1 fill-current">
+                                <path class="heroicon-ui" fill="#6D6B6E"
+                                    d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                                </path>
+                            </svg>
+                            <span>Beach</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="place-container">
+                <img src="https://images.unsplash.com/photo-1558117338-7ef3d637ce2f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&h=350&q=80"
+                    alt="Aruba">
+                <div class="place-text-wrapper">
+                    <h2 class="title">Aruba</h2>
+                    <ul class="places-tags">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                class="inline-block w-4 mr-1 fill-current">
+                                <path class="heroicon-ui" fill="#6D6B6E"
+                                    d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                                </path>
+                            </svg>
+                            <span>Medium Flight</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                class="inline-block w-4 mr-1 fill-current">
+                                <path class="heroicon-ui" fill="#6D6B6E"
+                                    d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                                </path>
+                            </svg>
+                            <span>Hot</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                class="inline-block w-4 mr-1 fill-current">
+                                <path class="heroicon-ui" fill="#6D6B6E"
+                                    d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                                </path>
+                            </svg>
+                            <span>Beach</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="place-container">
+                <img src="https://images.unsplash.com/photo-1558117338-7ef3d637ce2f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&h=350&q=80"
+                    alt="Aruba">
+                <div class="place-text-wrapper">
+                    <h2 class="title">Aruba</h2>
+                    <ul class="places-tags">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                class="inline-block w-4 mr-1 fill-current">
+                                <path class="heroicon-ui" fill="#6D6B6E"
+                                    d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                                </path>
+                            </svg>
+                            <span>Medium Flight</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                class="inline-block w-4 mr-1 fill-current">
+                                <path class="heroicon-ui" fill="#6D6B6E"
+                                    d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                                </path>
+                            </svg>
+                            <span>Hot</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                class="inline-block w-4 mr-1 fill-current">
+                                <path class="heroicon-ui" fill="#6D6B6E"
+                                    d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                                </path>
+                            </svg>
+                            <span>Beach</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="place-container">
+                <img src="https://images.unsplash.com/photo-1558117338-7ef3d637ce2f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&h=350&q=80"
+                    alt="Aruba">
+                <div class="place-text-wrapper">
+                    <h2 class="title">Aruba</h2>
+                    <ul class="places-tags">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                class="inline-block w-4 mr-1 fill-current">
+                                <path class="heroicon-ui" fill="#6D6B6E"
+                                    d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                                </path>
+                            </svg>
+                            <span>Medium Flight</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                class="inline-block w-4 mr-1 fill-current">
+                                <path class="heroicon-ui" fill="#6D6B6E"
+                                    d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                                </path>
+                            </svg>
+                            <span>Hot</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                class="inline-block w-4 mr-1 fill-current">
+                                <path class="heroicon-ui" fill="#6D6B6E"
+                                    d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                                </path>
+                            </svg>
+                            <span>Beach</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="place-container">
+                <img src="https://images.unsplash.com/photo-1558117338-7ef3d637ce2f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&h=350&q=80"
+                    alt="Aruba">
+                <div class="place-text-wrapper">
+                    <h2 class="title">Aruba</h2>
+                    <ul class="places-tags">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                class="inline-block w-4 mr-1 fill-current">
+                                <path class="heroicon-ui" fill="#6D6B6E"
+                                    d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                                </path>
+                            </svg>
+                            <span>Medium Flight</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                class="inline-block w-4 mr-1 fill-current">
+                                <path class="heroicon-ui" fill="#6D6B6E"
+                                    d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                                </path>
+                            </svg>
+                            <span>Hot</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                class="inline-block w-4 mr-1 fill-current">
+                                <path class="heroicon-ui" fill="#6D6B6E"
+                                    d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                                </path>
+                            </svg>
+                            <span>Beach</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="place-container">
+                <img src="https://images.unsplash.com/photo-1558117338-7ef3d637ce2f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&h=350&q=80"
+                    alt="Aruba">
+                <div class="place-text-wrapper">
+                    <h2 class="title">Aruba</h2>
+                    <ul class="places-tags">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                class="inline-block w-4 mr-1 fill-current">
+                                <path class="heroicon-ui" fill="#6D6B6E"
+                                    d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                                </path>
+                            </svg>
+                            <span>Medium Flight</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                class="inline-block w-4 mr-1 fill-current">
+                                <path class="heroicon-ui" fill="#6D6B6E"
+                                    d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                                </path>
+                            </svg>
+                            <span>Hot</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                class="inline-block w-4 mr-1 fill-current">
+                                <path class="heroicon-ui" fill="#6D6B6E"
+                                    d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                                </path>
+                            </svg>
+                            <span>Beach</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
