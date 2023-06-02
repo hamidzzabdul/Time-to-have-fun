@@ -2,15 +2,17 @@ const addPlace = document.querySelector(".add-place");
 const close = document.querySelector(".close");
 const tellMe = document.querySelector(".tell-me");
 
+console.log('hello world')
+
 let placeIsVisible =false
 
 addPlace.addEventListener("click", (e) => {
   openModal();
 });
 
-close.addEventListener("click", () => {
-  closeModal();
-});
+// close.addEventListener("click", () => {
+//   closeModal();
+// });
 
 tellMe.addEventListener("click", (e) => {
     console.log(e.target)   
