@@ -1,8 +1,12 @@
+// Imports
+import { login } from './login'
+
+// Dom Elements
 const addPlace = document.querySelector(".add-place");
 const close = document.querySelector(".close");
 const tellMe = document.querySelector(".tell-me");
 
-console.log('hello world')
+const loginbtn = document.querySelector('.login')
 
 let placeIsVisible =false
 
@@ -10,12 +14,11 @@ addPlace.addEventListener("click", (e) => {
   openModal();
 });
 
-// close.addEventListener("click", () => {
-//   closeModal();
-// });
+close.addEventListener("click", () => {
+  closeModal();
+});
 
 tellMe.addEventListener("click", (e) => {
-    console.log(e.target)   
   filteredPlace()
 });
 
@@ -27,6 +30,14 @@ const closeModal = () => {
   document.querySelector(".overlay").classList.remove("active");
   document.querySelector(".login-modal").classList.remove("active");
 };
+
+loginbtn.addEventListener('click', e=> {
+  console.log(e.target)
+  e.preventDefault()
+  const email =document.getElementById('email').value
+  const password =document.getElementById('password').value
+  login(email, password)
+})
 
 
 const playgif = () => {

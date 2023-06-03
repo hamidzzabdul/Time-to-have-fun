@@ -1,0 +1,29 @@
+
+.alert{
+  height: 10px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: .7rem;
+  font-weight: 300;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+
+.alert--success {
+  background:  #5ceb9f;
+}
+.alert--error {
+  background-color:  #eb4d4b;
+  color: #fff;
+}
+
+.input--error {
+  outline:1px solid red;
+  box-shadow: none;
+}
+
+.input--success {
+  border:1px solid #5ceb9f;
+}

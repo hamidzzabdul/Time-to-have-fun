@@ -104,4 +104,80 @@ block  content
                                 svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 24 24", width="20", height="20", class="inline-block w-4 mr-1 fill-current")
                                     path(class="heroicon-ui", fill="#6D6B6E", d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z")
                                 span= place.parameters[2] 
+    .overlay 
+    form.login-modal(action='') 
+        <i class="fa fa-times fa-lg (33% increase) close" aria-hidden="true"></i>
+        label(for="email") 
+            span email 
+            input(type="email" required id='email' class="email")
+        label(for="password") 
+            span password
+            input(type="password" required id='password' class="password")
+        button(type="submit").login Login 
 
+    .form.new-place 
+        .edit-place         
+            h2.title Edit place 
+            <i class="fa fa-times fa-lg (33% increase) close" aria-hidden="true"></i>
+
+        .place-wrapper 
+            label(for="name") 
+                span name
+                input(type="text" placeholder="Aruba")
+            label(for="description") 
+                span Description 
+                input(type="text" placeholder="We want to go there")
+            label(for="imageurl") 
+                span Image Url 
+                input(type="text" placeholder="")
+            label(for="Been there") 
+                span Been there?
+                select(name="Been ther") 
+                    option(value="no") no
+                    option(value="yes") yes
+                
+            .header 
+                p.heading Tags
+            ul.list-of-tags 
+                li 
+                    span.title type
+                    .tag-categories 
+                        label(for="Adventure") 
+                            input(type="radio", name="", value="Adventure")
+                            span Adventure
+                        label(for="Beach") 
+                            input(type="radio", name="", value="Beach")
+                            span Beach
+                        label(for="City") 
+                            input(type="radio", name="", value="City")
+                            span City
+                        label(for="Ski") 
+                            input(type="radio", name="", value="Ski")
+                            span Ski
+                li 
+                    span.title Temperatur
+                    .tag-categories 
+                        label(for="Hot") 
+                            input(type="radio", name="", value="Hot")
+                            span Hot
+                        label(for="Cold") 
+                            input(type="radio", name="", value="Cold")
+                            span Cold
+                        label(for="Temperate") 
+                            input(type="radio", name="", value="Temperate")
+                            span Temperate
+                li 
+                    span.title Flight
+                    .tag-categories 
+                        label(for="Long") 
+                            input(type="radio", name="", value="Long")
+                            span Long
+                        label(for="Medium") 
+                            input(type="radio", name="", value="Medium")
+                            span Medium
+                        label(for="Short") 
+                            input(type="radio", name="", value="Short")
+                            span Short
+        button(type="submit" class="edit") Edit  
+
+        

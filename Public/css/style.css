@@ -353,7 +353,7 @@ li > span {
 
 /* modal */
 .overlay {
-  display: none;
+  /* display: none; */
   position: absolute;
   width: 100%;
   height: 100%;
@@ -370,7 +370,7 @@ li > span {
 .login-modal {
   display: none;
   width: 350px;
-  height: 270px;
+  height: auto;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -418,14 +418,19 @@ li > span {
 }
 
 .login {
-  width: 100px;
-  padding: .8rem;
+  width: 120px;
+  padding: .5rem;
   border: none;
   background-color: #38b2ac;
   color: white;
   cursor: pointer;
   border-radius: 5px;
   font-size: 1.1rem;
+  transition: transform 300ms ease;
+}
+
+.login:hover{
+ transform: translateY(-4px);
 }
 
 .login-modal.active {
@@ -436,4 +441,121 @@ li > span {
   .login-modal{
     width: 70%;
   }
+}
+
+
+.new-place{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 85vh;
+  padding: 2rem 1rem;
+  background-color: #fff;
+  border-radius: 10px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow: scroll;
+}
+.place-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.edit-place{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit-place>.close{
+  cursor: pointer;
+}
+.place-wrapper>label{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.place-wrapper>label>span{
+  color: black!important;
+  text-transform: uppercase;
+}
+
+.place-wrapper>label>input{
+  border: none;
+  background-color: #EDF2F7;
+  padding: .8rem;
+  border-radius: 5px;
+  color: black;
+}
+
+.place-wrapper>label>input:focus,
+select:focus{
+  background-color: #ffff;
+  outline: 1px solid #696974;
+}
+
+select{
+  border: none;
+  background-color: #EDF2F7;
+  padding: .8rem;
+  border-radius: 5px;
+  color: black;
+}
+
+.list-of-tags{
+  width: 80%;
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;  
+}
+.list-of-tags>li{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.list-of-tags>li>.title{
+  text-transform: uppercase;
+  color: #b4c1d0;
+}
+
+
+.tag-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tag-categories>label{
+  display: flex;
+  gap: .5rem;
+}
+
+.tag-categories>label>span{
+  font-size: .875rem;
+}
+
+.header {
+ gap: .5rem;
+}
+
+.edit{
+  width: 150px;
+  padding: .5rem;
+  border-radius: 5px;
+  background-color: #38b2ac;
+  color: white;
+  font-size: 1.04rem;
+  border: none;
+  transition: transform 300ms ease;
+  cursor: pointer;
+}
+
+.edit:hover{
+  transform: translateY(-4px);
 }
