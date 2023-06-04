@@ -8,80 +8,71 @@ block  content
             </svg>
 
             p.title Time to have more fun
-        button.add-place 
-            a(href="#") Add place 
+        if user 
+            .button-wrapper 
+                button.add-place Add place 
+                button.logout Logout
+        else
+            button.login-place Login  
     section.filters 
-        .filtered-items 
+        form.filtered-items(method="GET")
             h2.title This year we are going to  ...
             .filter-wrapper 
                 .items 
                     p.category  Type 
                     .item-filters 
                         label(for="adventure") 
-                            input(type="radio", name="adventure", value="adventure")
+                            input(type="radio", name="type", value="adventure")
                             span adventure 
                     .item-filters 
                         label(for="beach") 
-                            input(type="radio", name="beach", value="beach")
+                            input(type="radio", name="type", value="beach")
                             span beach 
                     .item-filters 
                         label(for="City") 
-                            input(type="radio", name="City", value="City")
+                            input(type="radio", name="type", value="city")
                             span City 
                     .item-filters 
                         label(for="Ski") 
-                            input(type="radio", name="Ski", value="Ski")
-                            span Ski 
+                            input(type="radio", name="type", value="island")
+                            span Island 
+                    .item-filters 
+                        label(for="Ski") 
+                            input(type="radio", name="type", value="historical")
+                            span historical 
                 .items 
                     p.category  Temperature 
                     .item-filters 
                         label(for="Hot") 
-                            input(type="radio", name="Hot", value="Hot")
+                            input(type="radio", name="temperature", value="hot")
                             span Hot 
                     .item-filters 
                         label(for="Cold") 
-                            input(type="radio", name="Cold", value="Cold")
+                            input(type="radio", name="temperature", value="cold")
                             span Cold 
                     .item-filters 
-                        label(for="Temperate") 
-                            input(type="radio", name="Temperate", value="Temperate")
-                            span Temperate 
+                        label(for="mild") 
+                            input(type="radio", name="temperature", value="mild")
+                            span mild 
                 .items 
-                    p.category  Type 
+                    p.category  Flight
                     .item-filters 
                         label(for="Long") 
-                            input(type="radio", name="Long", value="Long")
+                            input(type="radio", name="flight", value="long")
                             span Long 
                     .item-filters 
                         label(for="medium") 
-                            input(type="radio", name="medium", value="medium")
+                            input(type="radio", name="flight", value="medium")
                             span medium 
                     .item-filters 
                         label(for="short") 
-                            input(type="radio", name="short", value="short")
+                            input(type="radio", name="flight", value="short")
                             span short 
-            button.tell-me Tell me already!!!
+            button.tell-me(type="submit") Tell me already!!!
         .filtered-place 
             img.plane-img(src="./assets/plane.png" alt="")
             img.gif(src="./assets/Airplane Cartoon Drawing.gif" alt="")
             .text-wrapper.inactive
-                img.place-image-filtered(src="https://images.unsplash.com/photo-1571893544028-06b07af6dade?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&h=350&q=80")
-                .place-description 
-                    h2.title Rio de janeiro,  Brazil 
-                    p.description Aruba is a small Caribbean island located off the coast of Venezuela, known for its stunning white sandy beaches, crystal-clear turquoise waters, and vibrant coral reefs.
-                    ul.tags 
-                        li
-                            svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 24 24", width="20", height="20", class="inline-block w-4 mr-1 fill-current")
-                                path(class="heroicon-ui", fill="#6D6B6E", d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z")
-                            span flight
-                        li
-                            svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 24 24", width="20", height="20", class="inline-block w-4 mr-1 fill-current")
-                                path(class="heroicon-ui", fill="#6D6B6E", d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z")
-                            span Flight
-                        li
-                            svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 24 24", width="20", height="20", class="inline-block w-4 mr-1 fill-current")
-                                path(class="heroicon-ui", fill="#6D6B6E", d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z")
-                            span Flight
 
     section.places 
         h1.title Places we want to go 
@@ -95,17 +86,17 @@ block  content
                             li 
                                 svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 24 24", width="20", height="20", class="inline-block w-4 mr-1 fill-current")
                                     path(class="heroicon-ui", fill="#6D6B6E", d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z")
-                                span= place.parameters[0] 
+                                span= place.tags[0] 
                             li 
                                 svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 24 24", width="20", height="20", class="inline-block w-4 mr-1 fill-current")
                                     path(class="heroicon-ui", fill="#6D6B6E", d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z")
-                                span= place.parameters[1] 
+                                span= place.tags[1] 
                             li 
                                 svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 24 24", width="20", height="20", class="inline-block w-4 mr-1 fill-current")
                                     path(class="heroicon-ui", fill="#6D6B6E", d="M2.59 13.41A1.98 1.98 0 0 1 2 12V7a5 5 0 0 1 5-5h4.99c.53 0 1.04.2 1.42.59l8 8a2 2 0 0 1 0 2.82l-8 8a2 2 0 0 1-2.82 0l-8-8zM20 12l-8-8H7a3 3 0 0 0-3 3v5l8 8 8-8zM7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z")
-                                span= place.parameters[2] 
+                                span= place.tags[2] 
     .overlay 
-    form.login-modal(action='') 
+    form.login-modal 
         <i class="fa fa-times fa-lg (33% increase) close" aria-hidden="true"></i>
         label(for="email") 
             span email 
@@ -115,7 +106,7 @@ block  content
             input(type="password" required id='password' class="password")
         button(type="submit").login Login 
 
-    .form.new-place 
+    .form.new-place.inactive 
         .edit-place         
             h2.title Edit place 
             <i class="fa fa-times fa-lg (33% increase) close" aria-hidden="true"></i>
@@ -163,9 +154,9 @@ block  content
                         label(for="Cold") 
                             input(type="radio", name="", value="Cold")
                             span Cold
-                        label(for="Temperate") 
-                            input(type="radio", name="", value="Temperate")
-                            span Temperate
+                        label(for="mild") 
+                            input(type="radio", name="", value="mild")
+                            span mild
                 li 
                     span.title Flight
                     .tag-categories 
@@ -178,6 +169,6 @@ block  content
                         label(for="Short") 
                             input(type="radio", name="", value="Short")
                             span Short
-        button(type="submit" class="edit") Edit  
+        button(type="submit" class="edit") Add Place
 
         

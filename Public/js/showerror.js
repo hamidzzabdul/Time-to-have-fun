@@ -8,11 +8,10 @@ export const hideError  = ()=>{
     if(email.className.includes('input--error')|| password.className.includes('input--error')){
         email.classList.remove('input--error')
         password.classList.remove('input--error')
-        console.log(email.classList)
     }
 }
 
-export const  showError = (type, msg, time=7)=> {
+export const  showError = (type, msg, time=4)=> {
     hideError()
     const markup = `<div class="alert alert--${type}">${msg}</span>`
     document.querySelector('.close').insertAdjacentHTML('afterend', markup);

@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
-const promisify = require("promisify");
+const { promisify } = require("util");
 const Users = require("../Models/userModel");
+const { Console } = require("console");
 
 const signToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -8,7 +9,7 @@ const signToken = (id) => {
   });
 };
 
-const createSendToken = (user, stauscCode, req, res) => {
+const createSendToken = (user, statusCode, req, res) => {
   const token = signToken(user._id);
 
   res.cookie("jwt", token, {
@@ -19,7 +20,7 @@ const createSendToken = (user, stauscCode, req, res) => {
     secure: req.secure || req.headers["x-forwarded-proto"] === "https",
   });
   user.password = undefined;
-  res.status(stauscCode).json({
+  res.status(statusCode).json({
     status: "success",
     token,
     data: {
@@ -48,7 +49,6 @@ exports.login = async (req, res) => {
         message: "incorrect password",
       });
     }
-
     createSendToken(user, 200, req, res);
   } catch (error) {
     res.status(404).json({
@@ -104,7 +104,7 @@ exports.isloggedIn = async (req, res, next) => {
     try {
       // verify token
       const decoded = await promisify(jwt.verify)(
-        req.cookies,
+        req.cookies.jwt,
         process.env.JWT_SECRET
       );
 
@@ -112,14 +112,22 @@ exports.isloggedIn = async (req, res, next) => {
       if (!currentUser) {
         return next();
       }
-      res.locals.user= currentUser
-      return next()
-
+      res.locals.user = currentUser;
+      return next();
     } catch (error) {
-        return next()
+      return next();
     }
   }
+  next();
 };
+
+exports.Logout = async(req, res, next) => {
+    res.cookie('jwt', 'loggedout', {
+      expires: new Date(Date.now() + 10 * 1000),
+      httpOnly: true
+    });
+    res.status(200).json({ status: 'success' });
+}
 
 // user controllers
 
