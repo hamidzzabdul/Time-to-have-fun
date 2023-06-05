@@ -1,3 +1,5 @@
+import { hideAlert } from "./showerror";
+
 export const hidePreviouslyRendered = () => {
     const el = document.querySelector('.filtered-details')
     if(el) {el.parentElement.removeChild(el);}

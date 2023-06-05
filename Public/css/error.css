@@ -27,3 +27,15 @@
 .input--success {
   border:1px solid #5ceb9f;
 }
+
+.no-match{
+  height: 300px;
+  background-color: #EDF2F7;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-match.inactive{
+  display: none;
+}

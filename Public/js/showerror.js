@@ -21,3 +21,12 @@ export const  showError = (type, msg, time=4)=> {
     password.classList.add(`input--${type}`)
     window.setTimeout(hideError, time * 1000);
 }
+
+export const hideAlert = () => {
+    const el = document.querySelector('.no-match')
+    if(el) el.remove()
+}
+export const showAlertError = () => {
+    const markup = `<p class="no-match">Sorry nothing matched those tags? 😥</>`
+    document.querySelector('.text-wrapper').insertAdjacentHTML('afterbegin', markup);
+}

@@ -24,17 +24,35 @@ exports.getPlace = async (req, res) => {
       delete filter.tags.$in;
     }
 
-    // Fetch the filtered place based on the filter object
-    const doc = await Place.findOne(filter);
-    if (doc.length === 0) {
+    // Fetch all places that match the filter
+    const places = await Place.find(filter);
+
+    if (places.length === 0) {
       return res.status(404).json({
         status: "fail",
-        message: "No place was found sorry",
+        message: "No place was found.",
       });
     }
-    res.status(200).json({
-      status: "Success",
-      result: doc.length,
+
+    // If user selects only one tag and submits multiple times, return a different place each time
+    if (Object.keys(filter.tags).length === 1) {
+      const randomIndex = Math.floor(Math.random() * places.length);
+      const doc = places[randomIndex];
+
+      return res.status(200).json({
+        status: "success",
+        result: 1,
+        data: {
+          doc,
+        },
+      });
+    }
+
+    // Return the first matching place
+    const doc = places[0];
+    return res.status(200).json({
+      status: "success",
+      result: 1,
       data: {
         doc,
       },
@@ -46,7 +64,6 @@ exports.getPlace = async (req, res) => {
     });
   }
 };
-
 
 exports.creatPlace = async(req, res) => {
   try {

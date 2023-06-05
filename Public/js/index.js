@@ -1,8 +1,7 @@
 // Imports
 import { login,  logout } from './login'
-
 import { getFilteredPlace } from './FIlter';
-
+import { hideAlert } from './showerror';
 // Dom Elements
 const addPlace = document.querySelector(".add-place");
 const loginModal = document.querySelector(".login-place ");
@@ -42,8 +41,7 @@ tellMe.addEventListener("click", (e) => {
   const typeValue = selectedType ? selectedType.value : null;
   const temperatureValue = selectedTemperature ? selectedTemperature.value : null;
   const flightValue = selectedFlight ? selectedFlight.value : null;
-  
-  console.log(typeValue, temperatureValue, flightValue)
+  // hide error as soon as 
   getFilteredPlace(typeValue, temperatureValue, flightValue)
   filteredPlace()
 });
@@ -99,20 +97,3 @@ const filteredPlace = () => {
         place.classList.add('inactive')
     }
 }
-
-
-
-// 
-// const addPlaceBtn  = document.querySelector('.new-place')
-
-// addPlaceBtn.addEventListener('submit', (e) => {
-//   e.preventDefault()
-//   const nameInput = document.querySelector('input[name="name"]').value;
-//   const descriptionInput = document.querySelector('input[name="description"]').value;
-//   const urlInput = document.querySelector('input[name="imageUrl"]').value;
-//   const typeTag = document.querySelector('input[name="type"]:checked').value;
-//   const temperatureTag = document.querySelector('input[name="temperature"]:checked').value;
-//   const flightTag = document.querySelector('input[name="flight"]:checked').value;
-//   console.log(nameInput, descriptionInput, urlInput, typeTag, temperatureTag, flightTag)
-// })
-
