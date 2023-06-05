@@ -9,6 +9,10 @@ const placesRouter = require('./Routes/placesRoutes')
 const viewRouter = require('./Routes/viewRouter')
 const userRouter = require('./Routes/userRouter')
 
+// body and cookie parser
+app.use(bodyParser.json())
+app.use(express.urlencoded({extended: true}))
+app.use(cookieParser());
 
 
 
@@ -21,9 +25,6 @@ app.use(express.static(`${__dirname}/public`));
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, 'views'))
 
-// body and cookie parser
-app.use(bodyParser.json())
-app.use(cookieParser());
 
 app.use('/', viewRouter)
 // api

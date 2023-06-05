@@ -46,3 +46,26 @@ exports.getPlace = async (req, res) => {
     });
   }
 };
+
+
+exports.creatPlace = async(req, res) => {
+  try {
+
+    const { name, description, imageUrl, type, temperature, flight} = req.body;
+    
+    const tags = [type, temperature, flight]
+
+    // Validate the required fields
+    if (!name || !description || !imageUrl || tags.length===0 ) {
+      return res.status(400).json({ error: 'Please provide all the required fields' });
+    }
+    const doc = await Place.create({ name, description, imageUrl, tags})
+    res.redirect('/')
+  } catch (error) {
+    res.status(404).json({
+      status: "fail",
+      message: error.message,
+    });
+  }
+
+}

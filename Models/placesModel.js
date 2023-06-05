@@ -8,6 +8,7 @@ const PlaceSchema = new mongoose.Schema({
   },
   imageUrl: {
     type: String,
+    required: [true, 'Please enter an image']
   },
   Visited: {
     type: String,
@@ -16,12 +17,14 @@ const PlaceSchema = new mongoose.Schema({
   tags: [
     {
       type: String,
-
       lowercase: true,
+      default: ['no tags sorry'],
+      min: 3,
     },
   ],
   description: {
     type: String,
+    required: [true, 'please enter a description']
   },
 });
 

@@ -13,9 +13,10 @@ export const getFilteredPlace = async(type, temperature, flight) => {
             }
         })
         if(res.data.status === ('Success')){
+            console.log(res.data.data)
             const data  = res.data.data.doc
-            const{imageUrl, name, description} = {...data}
-            renderFilteredPlace(imageUrl, name, description)
+            const{imageUrl, name, description,tags} = {...data}
+            renderFilteredPlace(imageUrl, name, description, tags)
         }else{
             console.log('No place found')
         }

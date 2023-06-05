@@ -43,7 +43,7 @@ tellMe.addEventListener("click", (e) => {
   const temperatureValue = selectedTemperature ? selectedTemperature.value : null;
   const flightValue = selectedFlight ? selectedFlight.value : null;
   
-  // console.log(typeValue, temperatureValue, flightValue)
+  console.log(typeValue, temperatureValue, flightValue)
   getFilteredPlace(typeValue, temperatureValue, flightValue)
   filteredPlace()
 });
@@ -103,5 +103,16 @@ const filteredPlace = () => {
 
 
 // 
-// Get all item-filters
+// const addPlaceBtn  = document.querySelector('.new-place')
+
+// addPlaceBtn.addEventListener('submit', (e) => {
+//   e.preventDefault()
+//   const nameInput = document.querySelector('input[name="name"]').value;
+//   const descriptionInput = document.querySelector('input[name="description"]').value;
+//   const urlInput = document.querySelector('input[name="imageUrl"]').value;
+//   const typeTag = document.querySelector('input[name="type"]:checked').value;
+//   const temperatureTag = document.querySelector('input[name="temperature"]:checked').value;
+//   const flightTag = document.querySelector('input[name="flight"]:checked').value;
+//   console.log(nameInput, descriptionInput, urlInput, typeTag, temperatureTag, flightTag)
+// })
 

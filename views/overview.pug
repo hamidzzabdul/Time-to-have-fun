@@ -54,6 +54,10 @@ block  content
                         label(for="mild") 
                             input(type="radio", name="temperature", value="mild")
                             span mild 
+                    .item-filters 
+                        label(for="warm") 
+                            input(type="radio", name="temperature", value="warm")
+                            span warm 
                 .items 
                     p.category  Flight
                     .item-filters 
@@ -106,7 +110,7 @@ block  content
             input(type="password" required id='password' class="password")
         button(type="submit").login Login 
 
-    .form.new-place.inactive 
+    form.new-place.inactive(method="POST" action="/api/v1/places/createPlace")
         .edit-place         
             h2.title Edit place 
             <i class="fa fa-times fa-lg (33% increase) close" aria-hidden="true"></i>
@@ -114,17 +118,17 @@ block  content
         .place-wrapper 
             label(for="name") 
                 span name
-                input(type="text" placeholder="Aruba")
+                input(type="text" placeholder="Aruba" name="name")
             label(for="description") 
                 span Description 
-                input(type="text" placeholder="We want to go there")
+                input(type="text" placeholder="We want to go there" name="description")
             label(for="imageurl") 
                 span Image Url 
-                input(type="text" placeholder="")
+                input(type="text" placeholder="", name="imageUrl")
             label(for="Been there") 
                 span Been there?
-                select(name="Been ther") 
-                    option(value="no") no
+                select(name="tags") 
+                    option(value="no" default) no
                     option(value="yes") yes
                 
             .header 
@@ -134,41 +138,44 @@ block  content
                     span.title type
                     .tag-categories 
                         label(for="Adventure") 
-                            input(type="radio", name="", value="Adventure")
+                            input(type="radio", name="type", value="adventure")
                             span Adventure
                         label(for="Beach") 
-                            input(type="radio", name="", value="Beach")
+                            input(type="radio", name="type", value="beach")
                             span Beach
                         label(for="City") 
-                            input(type="radio", name="", value="City")
+                            input(type="radio", name="type", value="city")
                             span City
                         label(for="Ski") 
-                            input(type="radio", name="", value="Ski")
+                            input(type="radio", name="type", value="Ski")
                             span Ski
                 li 
                     span.title Temperatur
                     .tag-categories 
                         label(for="Hot") 
-                            input(type="radio", name="", value="Hot")
+                            input(type="radio", name="temperature", value="Hot")
                             span Hot
                         label(for="Cold") 
-                            input(type="radio", name="", value="Cold")
+                            input(type="radio", name="temperature", value="Cold")
                             span Cold
                         label(for="mild") 
-                            input(type="radio", name="", value="mild")
+                            input(type="radio", name="temperature", value="mild")
                             span mild
+                        label(for="warm") 
+                            input(type="radio", name="temperature", value="warm")
+                            span warm
                 li 
                     span.title Flight
                     .tag-categories 
                         label(for="Long") 
-                            input(type="radio", name="", value="Long")
+                            input(type="radio", name="flight", value="Long")
                             span Long
                         label(for="Medium") 
-                            input(type="radio", name="", value="Medium")
+                            input(type="radio", name="flight", value="Medium")
                             span Medium
                         label(for="Short") 
-                            input(type="radio", name="", value="Short")
+                            input(type="radio", name="flight", value="Short")
                             span Short
-        button(type="submit" class="edit") Add Place
+        button( type ="submit" class="edit") Add Place
 
         
