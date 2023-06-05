@@ -262,11 +262,15 @@ li > span {
 }
 
 /*  */
-.places {
+.places,.visited{
   padding: 1rem;
 }
+.visited{
+  margin-top: 2rem;
+}
 
-.places > h1 {
+.places > h1 ,
+.visited> h1{
   width: 100%;
   margin-bottom: 2rem;
   font-weight: 300;
@@ -274,7 +278,7 @@ li > span {
   color: #696974;
 }
 
-.i-want-to-go {
+.i-want-to-go{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-flow: row;

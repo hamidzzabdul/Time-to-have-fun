@@ -127,7 +127,7 @@ block  content
                 input(type="text" placeholder="", name="imageUrl")
             label(for="Been there") 
                 span Been there?
-                select(name="tags") 
+                select(name="Visited") 
                     option(value="no" default) no
                     option(value="yes") yes
                 
@@ -178,4 +178,7 @@ block  content
                             span Short
         button( type ="submit" class="edit") Add Place
 
-        
+    section.visited
+        h1.title Places Ive been to 
+        .i-want-to-go 
+            include __beento 
