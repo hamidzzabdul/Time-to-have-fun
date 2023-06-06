@@ -214,8 +214,7 @@ label > span {
   }
 }
 .text-wrapper {
-  width: 100%;
-  height: 500px;
+  width: 550px;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -227,13 +226,13 @@ label > span {
 }
 
 .filtered-details {
-  width: 100%;
+  width: inherit;
   height: inherit;
 }
 
-.filtered-details > .place-image-filtered {
+.filtered-details> .place-image-filtered {
   width: 100%;
-  height: 65%;
+  height: 300px;
   object-fit: cover;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
