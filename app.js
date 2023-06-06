@@ -20,7 +20,8 @@ app.use(cookieParser());
 
 // serving static files
 app.use(express.json());
-app.use(express.static(`${__dirname}/public`));
+app.use(express.static(`${__dirname}/Public`));
+app.use(express.static('css'));
 // render using pug
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, 'views'))
