@@ -27,6 +27,7 @@ export const hideAlert = () => {
     if(el) el.remove()
 }
 export const showAlertError = () => {
+    hideAlert()
     const markup = `<p class="no-match">Sorry nothing matched those tags? 😥</>`
     document.querySelector('.text-wrapper').insertAdjacentHTML('afterbegin', markup);
 }

@@ -1,49 +1,51 @@
 // Imports
-import { login,  logout } from './login'
-import { getFilteredPlace } from './FIlter';
-import { hideAlert } from './showerror';
+import { login, logout } from "./login";
+import { getFilteredPlace } from "./FIlter";
 // Dom Elements
 const addPlace = document.querySelector(".add-place");
 const loginModal = document.querySelector(".login-place ");
 const close = document.querySelectorAll(".close");
 const tellMe = document.querySelector(".tell-me");
 
-const loginbtn = document.querySelector('.login')
-const logoutBtn = document.querySelector('.logout')
+const loginbtn = document.querySelector(".login");
+const logoutBtn = document.querySelector(".logout");
 
-let placeIsVisible =false
+let placeIsVisible = false;
 
-if(loginModal){
+if (loginModal) {
   loginModal.addEventListener("click", (e) => {
     openLoginModal();
   });
 }
 
-if(addPlace){
+if (addPlace) {
   addPlace.addEventListener("click", (e) => {
     showAddPlaceModal();
   });
 }
 
-close.forEach(el => {
+close.forEach((el) => {
   el.addEventListener("click", () => {
     closeModal();
   });
-})
-
+});
 
 tellMe.addEventListener("click", (e) => {
-  e.preventDefault()
+  e.preventDefault();
   const selectedType = document.querySelector('input[name="type"]:checked');
-  const selectedTemperature = document.querySelector('input[name="temperature"]:checked');
+  const selectedTemperature = document.querySelector(
+    'input[name="temperature"]:checked'
+  );
   const selectedFlight = document.querySelector('input[name="flight"]:checked');
 
   const typeValue = selectedType ? selectedType.value : null;
-  const temperatureValue = selectedTemperature ? selectedTemperature.value : null;
+  const temperatureValue = selectedTemperature
+    ? selectedTemperature.value
+    : null;
   const flightValue = selectedFlight ? selectedFlight.value : null;
-  // hide error as soon as 
-  getFilteredPlace(typeValue, temperatureValue, flightValue)
-  filteredPlace()
+  // hide error as soon as
+  getFilteredPlace(typeValue, temperatureValue, flightValue);
+  filteredPlace();
 });
 
 const openLoginModal = () => {
@@ -58,23 +60,23 @@ const showAddPlaceModal = () => {
 
 const closeModal = () => {
   document.querySelector(".overlay").classList.remove("active");
-  if(loginModal){
+  if (loginModal) {
     document.querySelector(".login-modal").classList.remove("active");
   }
   document.querySelector(".new-place").classList.add("inactive");
 };
 
-loginbtn.addEventListener('click', e=> {
-  e.preventDefault()
-  const email =document.getElementById('email').value
-  const password =document.getElementById('password').value
-  login(email, password)
-})
+loginbtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  login(email, password);
+});
 
-if(logoutBtn){
-logoutBtn.addEventListener('click', e => {
-  logout();
-})
+if (logoutBtn) {
+  logoutBtn.addEventListener("click", (e) => {
+    logout();
+  });
 }
 
 const playgif = () => {
@@ -86,14 +88,32 @@ const playgif = () => {
   }, 5000);
 };
 
-
 const filteredPlace = () => {
-    const place = document.querySelector('.text-wrapper')
-    if(placeIsVisible === false){
-        playgif()
-        setTimeout(() => {
-            place.classList.remove('inactive')
-        }, 5000);
-        place.classList.add('inactive')
-    }
-}
+  const place = document.querySelector(".text-wrapper");
+  if (placeIsVisible === false) {
+    playgif();
+    setTimeout(() => {
+      place.classList.remove("inactive");
+    }, 5000);
+    place.classList.add("inactive");
+  }
+};
+
+const clearBtn = document.querySelector(".clear-filters");
+const radioButtons = document.querySelectorAll('input[type="radio"]');
+
+const clearFilters = () => {
+  radioButtons.forEach((btn) => {
+    btn.addEventListener("change", (e) => {
+      clearBtn.classList.remove("inactive");
+    });
+  });
+};
+clearFilters();
+
+clearBtn.addEventListener("click", (e) => {
+  radioButtons.forEach((btn) => {
+    btn.checked = false;
+    clearBtn.classList.add("inactive");
+  });
+});

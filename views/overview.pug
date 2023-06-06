@@ -72,7 +72,9 @@ block  content
                         label(for="short") 
                             input(type="radio", name="flight", value="short")
                             span short 
-            button.tell-me(type="submit") Tell me already!!!
+            .filter-btn             
+                button.tell-me(type="submit") Tell me already!!!
+                p.clear-filters.inactive clear filters!
         .filtered-place 
             img.plane-img(src="./assets/plane.png" alt="")
             img.gif(src="./assets/Airplane Cartoon Drawing.gif" alt="")
@@ -118,13 +120,13 @@ block  content
         .place-wrapper 
             label(for="name") 
                 span name
-                input(type="text" placeholder="Aruba" name="name")
+                input(type="text" placeholder="Aruba" name="name" required)
             label(for="description") 
                 span Description 
-                input(type="text" placeholder="We want to go there" name="description")
+                input(type="text" placeholder="We want to go there" name="description" required)
             label(for="imageurl") 
                 span Image Url 
-                input(type="text" placeholder="", name="imageUrl")
+                input(type="text" placeholder="", name="imageUrl" required)
             label(for="Been there") 
                 span Been there?
                 select(name="Visited") 
@@ -138,43 +140,43 @@ block  content
                     span.title type
                     .tag-categories 
                         label(for="Adventure") 
-                            input(type="radio", name="type", value="adventure")
+                            input(type="radio", name="type", value="adventure" required)
                             span Adventure
                         label(for="Beach") 
-                            input(type="radio", name="type", value="beach")
+                            input(type="radio", name="type", value="beach" required)
                             span Beach
                         label(for="City") 
-                            input(type="radio", name="type", value="city")
+                            input(type="radio", name="type", value="city" required)
                             span City
                         label(for="Ski") 
-                            input(type="radio", name="type", value="Ski")
+                            input(type="radio", name="type", value="Ski" required)
                             span Ski
                 li 
                     span.title Temperatur
                     .tag-categories 
                         label(for="Hot") 
-                            input(type="radio", name="temperature", value="Hot")
+                            input(type="radio", name="temperature", value="Hot" required)
                             span Hot
                         label(for="Cold") 
-                            input(type="radio", name="temperature", value="Cold")
+                            input(type="radio", name="temperature", value="Cold" required)
                             span Cold
                         label(for="mild") 
-                            input(type="radio", name="temperature", value="mild")
+                            input(type="radio", name="temperature", value="mild" required)
                             span mild
                         label(for="warm") 
-                            input(type="radio", name="temperature", value="warm")
+                            input(type="radio", name="temperature", value="warm" required)
                             span warm
                 li 
                     span.title Flight
                     .tag-categories 
                         label(for="Long") 
-                            input(type="radio", name="flight", value="Long")
+                            input(type="radio", name="flight", value="Long" required)
                             span Long
                         label(for="Medium") 
-                            input(type="radio", name="flight", value="Medium")
+                            input(type="radio", name="flight", value="Medium" required)
                             span Medium
                         label(for="Short") 
-                            input(type="radio", name="flight", value="Short")
+                            input(type="radio", name="flight", value="Short" required)
                             span Short
         button( type ="submit" class="edit") Add Place
 

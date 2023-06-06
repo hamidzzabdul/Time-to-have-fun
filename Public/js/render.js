@@ -2,7 +2,7 @@ import { hideAlert } from "./showerror";
 
 export const hidePreviouslyRendered = () => {
     const el = document.querySelector('.filtered-details')
-    if(el) {el.parentElement.removeChild(el);}
+    if(el) el.parentElement.removeChild(el)
 }
 
 export const renderFilteredPlace = (imgUrl, name, description, tags) => {
